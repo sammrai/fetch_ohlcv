@@ -2,7 +2,7 @@
 an ohlcv fetcher for influx data format.
 
 # usage:
-docker run --rm fetch_ohlcv:latest [-h] --exchanges [EXCHANGES [EXCHANGES ...]] --symbols
+docker run --rm sammrai/fetch_ohlcv:latest [-h] --exchanges [EXCHANGES [EXCHANGES ...]] --symbols
                       [SYMBOLS [SYMBOLS ...]] [--timeframe TIMEFRAME]
 
 or run it in your environment:
@@ -13,7 +13,7 @@ python fetch_ohlcv.py [-h] --exchanges [EXCHANGES [EXCHANGES ...]] --symbols
 # example:
 
 ```
-$ docker run --rm fetch_ohlcv:latest --exchanges ftx kraken --symbols BTC/USD ETH/USD
+$ docker run --rm sammrai/fetch_ohlcv:latest --exchanges ftx kraken --symbols BTC/USD ETH/USD
 market_test,exchange=FTX,symbol=BTC/USD,timeframe=1m open=55846.0,high=55950.0,low=55766.0,close=55843.0,volume=1460420.5062 1638547320000000000
 market_test,exchange=FTX,symbol=BTC/USD,timeframe=1m open=55851.0,high=55893.0,low=55701.0,close=55755.0,volume=1636610.0936 1638547380000000000
 market_test,exchange=FTX,symbol=BTC/USD,timeframe=1m open=55754.0,high=55920.0,low=55731.0,close=55823.0,volume=1690945.4552 1638547440000000000
@@ -41,7 +41,7 @@ simply write the following settings to your telegraf config file:
 
 ```:telegraf.conf
 [[inputs.exec]]
-  commands = ["docker run --rm fetch_ohlcv:latest --exchanges ftx kraken --symbols BTC/USD ETH/USD"]
+  commands = ["docker run --rm sammrai/fetch_ohlcv:latest --exchanges ftx kraken --symbols BTC/USD ETH/USD"]
   timeout = "10s"
   data_format = "influx"
   interval = "10s"
