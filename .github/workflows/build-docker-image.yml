@@ -47,4 +47,4 @@ jobs:
       - name: Run tests
         run: |
           docker pull ${{ github.repository }}:${{ github.sha }}
-          docker run --rm ${{ github.repository }}:${{ github.sha }} --exchanges kucoin kraken --symbols BTC/USDT ETH/USDT
+          docker run --rm ${{ github.repository }}:${{ github.sha }} --exchanges kucoina kraken --symbols BTC/USDT ETH/USDT
