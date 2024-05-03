@@ -3,11 +3,34 @@ import calendar
 import ccxt.async_support as ccxt
 import asyncio
 import argparse
+import ccxt as ccxt_sync
 
-parser = argparse.ArgumentParser(description='an ohlcv fetcher.')
-parser.add_argument('--exchanges', required=True, nargs="*", type=str, help=f'available exchanges: {ccxt.exchanges}') 
-parser.add_argument('--symbols', required=True, nargs="*", type=str, help=f'an example of symbols: {["BTC/USD","ETH/USD","ETH/JPY","BTC/JPY","XRP/JPY"]}')
-parser.add_argument('--timeframe', required=False, default="1m", type=str, help=f'timeframe: {["1m","1h","1d"]}')
+
+class HelpSymbolsAction(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        if values:
+            self.sample_symbols(values)
+        else:
+            print("Usage: --help-symbols <exchange>")
+        parser.exit()
+
+    def sample_symbols(self, exchange_id):
+        if exchange_id in ccxt_sync.exchanges:
+            try:
+                exchange_class = getattr(ccxt_sync, exchange_id)
+                exchange = exchange_class()
+                markets = exchange.load_markets()
+                print("Available symbols for {}: {}".format(exchange_id, ", ".join(list(markets.keys()))))
+            except Exception as e:
+                print(f"Error loading symbols for {exchange_id}: {e}")
+        else:
+            print(f"Exchange `{exchange_id}` is not supported.")
+
+parser = argparse.ArgumentParser(description='A tool to fetch OHLCV data.')
+parser.add_argument('--exchanges', required=True, nargs="*", type=str, help='List of exchanges. Available: {}'.format(", ".join(ccxt.exchanges)))
+parser.add_argument('--symbols', required=True, nargs="*", type=str, help='Specify symbols to fetch data for. Use --help-symbols <exchange> to view available symbols.')
+parser.add_argument('--timeframe', required=False, default="1m", type=str, help='Timeframe options: 1m, 1h, 1d')
+parser.add_argument('--help-symbols', action=HelpSymbolsAction, nargs='?', type=str, help='Show available symbols for a specified exchange')
 
 args = parser.parse_args()
 
@@ -62,6 +85,7 @@ async def print_ohlcv(exchange, symbol, timeframe, since):
         r = c.write(point="exchange",measurement=ohlcv,tag=tag,time=t_)
 
 async def main():
+
     cors=[]
     for exchange in exchanges:
         await exchange.load_markets()
