@@ -56,7 +56,7 @@ jobs:
   dependabot:
     runs-on: ubuntu-latest
     permissions: write-all
-    needs: build
+    needs: docker-build
     if: ${{ github.actor == 'dependabot[bot]' || github.event.action == 'synchronize'  && startsWith( github.head_ref, 'dependabot' ) }}
     steps:
       - name: Dependabot metadata
