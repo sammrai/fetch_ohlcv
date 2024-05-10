@@ -13,27 +13,32 @@ python fetch_ohlcv.py [-h] --exchanges [EXCHANGES [EXCHANGES ...]] --symbols
 # example:
 
 ```
-$ docker run --rm sammrai/fetch_ohlcv:latest --exchanges ftx kraken --symbols BTC/USD ETH/USD
-market_test,exchange=FTX,symbol=BTC/USD,timeframe=1m open=55846.0,high=55950.0,low=55766.0,close=55843.0,volume=1460420.5062 1638547320000000000
-market_test,exchange=FTX,symbol=BTC/USD,timeframe=1m open=55851.0,high=55893.0,low=55701.0,close=55755.0,volume=1636610.0936 1638547380000000000
-market_test,exchange=FTX,symbol=BTC/USD,timeframe=1m open=55754.0,high=55920.0,low=55731.0,close=55823.0,volume=1690945.4552 1638547440000000000
-market_test,exchange=FTX,symbol=BTC/USD,timeframe=1m open=55821.0,high=55823.0,low=55571.0,close=55671.0,volume=2053419.5758 1638547500000000000
-market_test,exchange=FTX,symbol=BTC/USD,timeframe=1m open=55664.0,high=55707.0,low=55544.0,close=55544.0,volume=1578248.4863 1638547560000000000
-market_test,exchange=FTX,symbol=ETH/USD,timeframe=1m open=4449.1,high=4453.7,low=4444.7,close=4448.3,volume=2177670.3817 1638547320000000000
-market_test,exchange=FTX,symbol=ETH/USD,timeframe=1m open=4448.4,high=4454.6,low=4416.0,close=4422.2,volume=5542374.1859 1638547380000000000
-market_test,exchange=FTX,symbol=ETH/USD,timeframe=1m open=4422.2,high=4444.8,low=4416.4,close=4436.1,volume=5344918.8095 1638547440000000000
-market_test,exchange=FTX,symbol=ETH/USD,timeframe=1m open=4436.4,high=4437.3,low=4407.3,close=4412.3,volume=4715969.4813 1638547500000000000
-market_test,exchange=FTX,symbol=ETH/USD,timeframe=1m open=4412.3,high=4416.3,low=4381.0,close=4383.8,volume=4898206.5443 1638547560000000000
-market_test,exchange=Kraken,symbol=BTC/USD,timeframe=1m open=55880.0,high=55932.2,low=55801.3,close=55820.0,volume=3.97647873 1638547320000000000
-market_test,exchange=Kraken,symbol=BTC/USD,timeframe=1m open=55820.0,high=55882.8,low=55556.0,close=55754.4,volume=43.77752412 1638547380000000000
-market_test,exchange=Kraken,symbol=BTC/USD,timeframe=1m open=55754.4,high=55882.7,low=55736.2,close=55813.5,volume=3.69913319 1638547440000000000
-market_test,exchange=Kraken,symbol=BTC/USD,timeframe=1m open=55813.5,high=55829.6,low=55630.0,close=55666.6,volume=3.2201925 1638547500000000000
-market_test,exchange=Kraken,symbol=BTC/USD,timeframe=1m open=55650.8,high=55667.3,low=55556.0,close=55557.2,volume=9.16245644 1638547560000000000
-market_test,exchange=Kraken,symbol=ETH/USD,timeframe=1m open=4451.19,high=4451.81,low=4447.0,close=4447.0,volume=57.45203599 1638547320000000000
-market_test,exchange=Kraken,symbol=ETH/USD,timeframe=1m open=4447.0,high=4454.1,low=4420.0,close=4425.76,volume=598.85125035 1638547380000000000
-market_test,exchange=Kraken,symbol=ETH/USD,timeframe=1m open=4421.16,high=4445.09,low=4420.73,close=4432.61,volume=126.11416368 1638547440000000000
-market_test,exchange=Kraken,symbol=ETH/USD,timeframe=1m open=4432.61,high=4437.15,low=4411.0,close=4414.2,volume=290.83162068 1638547500000000000
-market_test,exchange=Kraken,symbol=ETH/USD,timeframe=1m open=4412.6,high=4417.61,low=4390.0,close=4390.0,volume=548.47544983 1638547560000000000
+docker run --rm sammrai/fetch_ohlcv:latest --exchanges kucoin kraken --symbols BTC/USDT ETH/USDT
+```
+
+```
+exchange,exchange=KuCoin,symbol=ETH/USDT,timeframe=1m open=3029.67,high=3029.67,low=3029.51,close=3029.52,volume=2.7097698 1715316240000000000
+exchange,exchange=KuCoin,symbol=ETH/USDT,timeframe=1m open=3029.26,high=3029.52,low=3029.13,close=3029.14,volume=8.2534245 1715316300000000000
+exchange,exchange=KuCoin,symbol=ETH/USDT,timeframe=1m open=3029.14,high=3029.75,low=3029.14,close=3029.52,volume=6.1275113 1715316360000000000
+exchange,exchange=KuCoin,symbol=ETH/USDT,timeframe=1m open=3029.52,high=3029.52,low=3029.52,close=3029.52,volume=0.0028895 1715316420000000000
+exchange,exchange=KuCoin,symbol=ETH/USDT,timeframe=1m open=3029.52,high=3029.89,low=3029.51,close=3029.52,volume=7.6272211 1715316480000000000
+exchange,exchange=KuCoin,symbol=BTC/USDT,timeframe=1m open=62832.1,high=62862.0,low=62832.0,close=62862.0,volume=0.44281948 1715316240000000000
+exchange,exchange=KuCoin,symbol=BTC/USDT,timeframe=1m open=62861.9,high=62861.9,low=62835.1,close=62835.1,volume=0.58980588 1715316300000000000
+exchange,exchange=KuCoin,symbol=BTC/USDT,timeframe=1m open=62835.1,high=62862.7,low=62835.1,close=62857.3,volume=0.60533189 1715316360000000000
+exchange,exchange=KuCoin,symbol=BTC/USDT,timeframe=1m open=62858.9,high=62859.0,low=62852.9,close=62857.7,volume=0.44976205 1715316420000000000
+exchange,exchange=KuCoin,symbol=BTC/USDT,timeframe=1m open=62857.6,high=62900.0,low=62857.6,close=62900.0,volume=0.59224226 1715316480000000000
+exchange,exchange=Kraken,symbol=BTC/USDT,timeframe=1m open=62902.9,high=62902.9,low=62902.9,close=62902.9,volume=0.0 1715316240000000000
+exchange,exchange=Kraken,symbol=BTC/USDT,timeframe=1m open=62902.9,high=62902.9,low=62902.9,close=62902.9,volume=0.0 1715316300000000000
+exchange,exchange=Kraken,symbol=BTC/USDT,timeframe=1m open=62867.9,high=62867.9,low=62867.3,close=62867.4,volume=0.0348973 1715316360000000000
+exchange,exchange=Kraken,symbol=BTC/USDT,timeframe=1m open=62868.1,high=62868.4,low=62860.2,close=62866.7,volume=0.20599718 1715316420000000000
+exchange,exchange=Kraken,symbol=BTC/USDT,timeframe=1m open=62887.6,high=62887.6,low=62882.1,close=62886.2,volume=0.1005 1715316480000000000
+exchange,exchange=Kraken,symbol=BTC/USDT,timeframe=1m open=62886.2,high=62886.2,low=62886.2,close=62886.2,volume=0.0 1715316540000000000
+exchange,exchange=Kraken,symbol=ETH/USDT,timeframe=1m open=3031.74,high=3031.74,low=3031.74,close=3031.74,volume=0.0 1715316240000000000
+exchange,exchange=Kraken,symbol=ETH/USDT,timeframe=1m open=3031.74,high=3031.74,low=3031.74,close=3031.74,volume=0.0 1715316300000000000
+exchange,exchange=Kraken,symbol=ETH/USDT,timeframe=1m open=3031.74,high=3031.74,low=3031.74,close=3031.74,volume=0.0 1715316360000000000
+exchange,exchange=Kraken,symbol=ETH/USDT,timeframe=1m open=3031.74,high=3031.74,low=3031.74,close=3031.74,volume=0.0 1715316420000000000
+exchange,exchange=Kraken,symbol=ETH/USDT,timeframe=1m open=3031.74,high=3031.74,low=3031.74,close=3031.74,volume=0.0 1715316480000000000
+exchange,exchange=Kraken,symbol=ETH/USDT,timeframe=1m open=3031.74,high=3031.74,low=3031.74,close=3031.74,volume=0.0 1715316540000000000
 ```
 
 # telegraf integration
@@ -63,35 +68,28 @@ simply write the following settings to your telegraf config file:
 show this help message and exit
 
 ## --exchanges [EXCHANGES [EXCHANGES ...]]
-available exchanges: ['aax', 'aofex', 'ascendex',
-'bequant', 'bibox', 'bigone', 'binance',
-'binancecoinm', 'binanceus', 'binanceusdm', 'bit2c',
-'bitbank', 'bitbay', 'bitbns', 'bitcoincom',
-'bitfinex', 'bitfinex2', 'bitflyer', 'bitforex',
-'bitget', 'bithumb', 'bitmart', 'bitmex', 'bitpanda',
-'bitrue', 'bitso', 'bitstamp', 'bitstamp1', 'bittrex',
-'bitvavo', 'bl3p', 'btcalpha', 'btcbox', 'btcmarkets',
-'btctradeua', 'btcturk', 'buda', 'bw', 'bybit',
-'bytetrade', 'cdax', 'cex', 'coinbase',
-'coinbaseprime', 'coinbasepro', 'coincheck', 'coinex',
-'coinfalcon', 'coinmarketcap', 'coinmate', 'coinone',
-'coinspot', 'crex24', 'currencycom', 'delta',
-'deribit', 'digifinex', 'eqonex', 'equos', 'exmo',
-'flowbtc', 'ftx', 'ftxus', 'gateio', 'gemini',
-'hitbtc', 'hitbtc3', 'hollaex', 'huobi', 'huobijp',
-'huobipro', 'idex', 'independentreserve', 'indodax',
-'itbit', 'kraken', 'kucoin', 'kuna', 'latoken',
-'latoken1', 'lbank', 'liquid', 'luno', 'lykke',
-'mercado', 'mexc', 'ndax', 'novadax', 'oceanex',
-'okcoin', 'okex', 'okex3', 'okex5', 'paymium',
-'phemex', 'poloniex', 'probit', 'qtrade', 'ripio',
-'stex', 'therock', 'tidebit', 'tidex', 'timex',
-'upbit', 'vcc', 'wavesexchange', 'whitebit', 'xena',
-'yobit', 'zaif', 'zb']
+List of exchanges. Available: ace, alpaca, ascendex,
+                        bequant, bigone, binance, binancecoinm, binanceus,
+                        binanceusdm, bingx, bit2c, bitbank, bitbay, bitbns,
+                        bitcoincom, bitfinex, bitfinex2, bitflyer, bitget,
+                        bithumb, bitmart, bitmex, bitopro, bitpanda, bitrue,
+                        bitso, bitstamp, bitteam, bitvavo, bl3p,
+                        blockchaincom, blofin, btcalpha, btcbox, btcmarkets,
+                        btcturk, bybit, cex, coinbase, coinbaseinternational,
+                        coinbasepro, coincheck, coinex, coinlist, coinmate,
+                        coinmetro, coinone, coinsph, coinspot, cryptocom,
+                        currencycom, delta, deribit, digifinex, exmo, fmfwio,
+                        gate, gateio, gemini, hitbtc, hitbtc3, hollaex, htx,
+                        huobi, huobijp, hyperliquid, idex, independentreserve,
+                        indodax, kraken, krakenfutures, kucoin, kucoinfutures,
+                        kuna, latoken, lbank, luno, lykke, mercado, mexc,
+                        ndax, novadax, oceanex, okcoin, okx, onetrading, p2b,
+                        paymium, phemex, poloniex, poloniexfutures, probit,
+                        timex, tokocrypto, tradeogre, upbit, wavesexchange,
+                        wazirx, whitebit, woo, yobit, zaif, zonda
 
 ## --symbols [SYMBOLS [SYMBOLS ...]]
-an example of symbols: ['BTC/USD', 'ETH/USD',
-'ETH/JPY', 'BTC/JPY', 'XRP/JPY']
+an example of symbols: AVA/USDT, FET/BTC, FET/ETH, ANKR/BTC, XMR/BTC, XMR/ETH, MTV/BTC, MTV/ETH, CRO/BTC, MTV/USDT, KMD/BTC, KMD/USDT, RFOX/USDT, TEL/USDT, TT/USDT, AERGO/USDT, XMR/USDT, TRX/KCS, ATOM/BTC, ATOM/ETH, ATOM/USDT...
 
 ## --timeframe TIMEFRAME
 timeframe: ['1m', '1h', '1d']
